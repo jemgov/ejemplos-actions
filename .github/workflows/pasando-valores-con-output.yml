@@ -21,5 +21,5 @@ jobs:
           echo "::add-mask::$valor_secreto"
           echo "VALOR_SECRETO=$valor_secreto" >> "GITHUB_OUTPUT"
 
-      - name: Obtiene la variable
+      - name: Usando el valor secreto
         run: echo "El valor secreto es ${{ steps.enmascara.outputs.VALOR_SECRETO }}"
