@@ -1,0 +1,19 @@
+name: Expresiones ejemplo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        sistema_operativo: [windows-latest, ubuntu-latest, macos-latest]
+    name: matriz-unidimensional
+    runs-on: ${{ matrix.sistema_operativo }}
+    steps:
+      - name: Paso solo para windows
+        if: ${{ matrix.sistema_operativo == 'windows-latest' }}
+        run: echo "Esto solo se ejecuta en windows"
+      - name: Paso para todos los sistemas operativos
+        run: echo "Paso común para todos"
