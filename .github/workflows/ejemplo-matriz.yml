@@ -1,4 +1,4 @@
-name: Ejemplo matrix
+name: Ejemplo matriz
 
 on:
   workflow_dispatch:
