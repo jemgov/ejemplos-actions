@@ -1,4 +1,4 @@
-name: Issues ejemplo.
+name: Issues ejemplo
 
 on:
   issues:
