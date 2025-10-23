@@ -9,7 +9,7 @@ on:
       - main
     paths:      # se ejecutará solamente cuando haya una modificación en una ruta o archivo específico
       - 'codigo/**'
-      - '.github/workflows/holamundo.yml'
+      - '.github/workflows/hola-mundo.yml'
   pull_request:
     branches:
       -main
