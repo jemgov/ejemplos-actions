@@ -1,0 +1,21 @@
+name: Disparador manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      texto:
+        description: Label del campo de texto
+        required: True
+      build:
+        description: Tipo del build
+        type: choice  #selección
+        default: release
+        options: [debug, release]  #compilar en modo debug o release
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrando los valores de los inputs
+        run: |
+          echo "Label: ${{ inputs.texto }}
+          echo "Build: ${{ inputs.build }}
