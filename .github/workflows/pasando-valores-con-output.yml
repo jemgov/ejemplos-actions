@@ -13,3 +13,13 @@ jobs:
 
       - name: Obtiene la variable
         run: echo "${{ steps.genera-valor.outputs.MI_VALOR }}"
+
+      - name: Enmascarando un valor
+        id: enmascara
+        run: |
+          valor_secreto=claudia
+          echo "::add-mask::$valor_secreto"
+          echo "VALOR_SECRETO=$valor_secreto" >> "GITHUB_OUTPUT"
+
+      - name: Obtiene la variable
+        run: echo "El valor secreto es ${{ steps.enmascara.outputs.VALOR_SECRETO }}"
