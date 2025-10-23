@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sistema-operativo: [windows-latest, ubuntu-latest, macos-latest]
+        sistema_operativo: [windows-latest, ubuntu-latest, macos-latest]
     name: Matriz uni-dimensional
     runs-on: ${{ matrix.sistema_operativo }}
     steps:
