@@ -7,12 +7,12 @@ on:
   push:
     branches: 
       - main
-    #paths:      # se ejecutará solamente cuando haya una modificación en una ruta o archivo específico
-      #- 'codigo/**'    # ruta de los ficheros que al modificarse activarán el workflow
-      #- '.github/workflows/hola-mundo.yml'  # fichero que al modificarse activará el workflow
-  #pull_request:    # se ejecutará solamente cuando haya un pull_request
-    #branches:
-      #-main
+    paths:      # se ejecutará solamente cuando haya una modificación en una ruta o archivo específico
+      - 'codigo/**'    # ruta de los ficheros que al modificarse activarán el workflow
+      - '.github/workflows/hola-mundo.yml'  # fichero que al modificarse activará el workflow
+  pull_request:    # se ejecutará solamente cuando haya un pull_request
+    branches:
+      -main
 
 jobs:
   saludar:
