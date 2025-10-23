@@ -17,3 +17,19 @@ jobs:
           echo "El valor de la variable global es: $variable_global"
           echo "Otra forma de escribir la variable es: ${{ env.variable_global }}"
           echo "También podemos definir variables a nivel de un único job: ${{ env.variable_job }}"
+          echo "También podemos definir variables a nivel de un único job: ${{ env.variable_step }}"
+        env:
+         variable_step: VARIABLE STEP
+
+      - name: step 2 del job-1
+        run: |
+          echo "Seguimos con acceso a la variable de WF: ${{ env.variable_global }}"
+          echo "Seguimos con acceso a la variable de JOB: ${{ env.variable_job }}"
+
+  job-2:
+   runs-on: ubuntu-latest
+   steps:
+    - name: step 1 del job-2
+      run: |
+       echo "Seguimos con acceso a la variable de WF: ${{ env.variable_global }}"
+   
